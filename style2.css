@@ -6,14 +6,12 @@
 body {
     font-family: 'Font', sans-serif;
     background-color: #f4f4f4;
-    height: 100vh;
-    margin: 10;
+    margin: 1vw;
 }
 
 p{
     color: #202020;
-    font-size: 300%;
-    cursor: default;
+    font-size: 10vw;
 }
 
 p:hover{
@@ -27,4 +25,5 @@ p::before{
 
 a{
     text-decoration: none;
+    cursor: default;
 }
