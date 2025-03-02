@@ -1,48 +1,74 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Calculator</title>
-    <link rel="stylesheet" type="text/css" href="Light/styleL.css">
-  </head>
-  <body>
-    <div class="calculator">
-      <input type="text" id="display" disabled>
-      <div class="button-row">
-        <button onclick="clearDisplay()">C</button>
-        <button onclick="backspace()">Del</button>
-        <button onclick="updateDisplay('*-1')">+/-</button>
-        <button onclick="updateDisplay('/')">/</button>
-      </div>
-      <div class="button-row">
-        <button onclick="updateDisplay('7')">7</button>
-        <button onclick="updateDisplay('8')">8</button>
-        <button onclick="updateDisplay('9')">9</button>
-        <button onclick="updateDisplay('*')">*</button>
-      </div>
-      <div class="button-row">
-        <button onclick="updateDisplay('4')">4</button>
-        <button onclick="updateDisplay('5')">5</button>
-        <button onclick="updateDisplay('6')">6</button>
-        <button onclick="updateDisplay('-')">-</button>
-      </div>
-      <div class="button-row">
-        <button onclick="updateDisplay('1')">1</button>
-        <button onclick="updateDisplay('2')">2</button>
-        <button onclick="updateDisplay('3')">3</button>
-        <button onclick="updateDisplay('+')">+</button>
-      </div>
-      <div class="button-row">
-        <button onclick="updateDisplay('0')">0</button>
-        <button onclick="updateDisplay('00')">00</button>
-        <button onclick="updateDisplay('.')">.</button>
-        <button onclick="calculate()">=</button>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="container">
+  <div class="calc">
+    <div class="header">
+      <div class="titles">
+        Simple Calculator
       </div>
     </div>
-    <div id="switch">
-      <a href="indexD.html">
-        <img src="Image/Light.png" alt="light "width="102.4px" height="48px">
-     </a>
+    <div class="display">
+      <div class="display-indicate">
+        max
+      </div>
+      <div class="display-main">
+        0
+      </div>
+      
+      <div class="display-operations">
+        0
+      </div>
     </div>
-    <script src="Light/scriptL.js"></script>
-  </body>
+
+    <div class="row">
+      <button class="button ac">ac</button>
+      <button class="button ce">ce</button>
+      <button class="button div">%</button>
+      <button class="button mult">x</button>
+    </div>
+
+    <div class="row">
+      <button class="button seven">7</button>
+      <button class="button eight">8</button>
+      <button class="button nine">9</button>
+      <button class="button minus">−</button>
+    </div>
+
+    <div class="row">
+      <button class="button four">4</button>
+      <button class="button five">5</button>
+      <button class="button six">6</button>
+      <button class="button plus">+</button>
+    </div>
+
+    <div class="bottom-row">
+      <div class="left">
+        <div class="row">
+          <button class="button one">1</button>
+          <button class="button two">2</button>
+          <button class="button three">3</button>
+        </div>
+        
+        <div class="row">
+          <button class="button zero">0</button>
+          <button class="button dot">.</button>
+        </div>
+      </div>
+      
+      <div class="right">
+        <div class="button eq">=</div>
+      </div>
+
+    </div>
+
+  </div>
+<script src="javascript.js"></script>
+</body>
 </html>
