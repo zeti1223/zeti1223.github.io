@@ -1,0 +1,58 @@
+body {
+    font-family: 'Roboto Mono', monospace;
+    background-color: #222;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0;
+    color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(15px);
+    height: 100vh;
+    -webkit-backdrop-filter: blur(15px);
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+canvas {
+  border: 1px solid #eee;
+  background-color: #222;
+}  
+
+#game-board {
+    border: 2px solid black;
+  }
+
+  /* Add responsive styles for smaller screens */
+  @media (max-width: 600px) {
+    #game-board {
+      width: 100vw;
+      height: 100vw;
+    }
+  }
+
+  /* Add responsive styles for larger screens */
+  @media (min-width: 601px) {
+    #game-board {
+      width: 600px;
+      height: 600px;
+    }
+body {
+    overflow: hidden;
+}
+  }
+
+  /* Add styles for score and high-score */
+  #score,
+  #high-score {
+    font-size: 1.5em;
+    text-align: center;
+    margin-bottom: 20px;
+  }
