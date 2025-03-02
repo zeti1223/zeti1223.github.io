@@ -1,0 +1,247 @@
+  @import url('https://fonts.googleapis.com/css2?family=Belanosima&family=Rubik+Vinyl&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Grand+Hotel&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
+
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        body
+        {
+            margin: 0;
+            display: flex;
+            width: 100%;
+            height: 100vh;
+          overflow: hidden;
+            display: flex;
+            background-image: url(https://darksoul-git.github.io/Blurred%20Side%20Navigation%20bar/windows-11-gradient-background-bloom-light-backgrounds-5k.png);
+            background-position: center;
+            background-size: cover;
+            font-family: "Poppins", sans-serif;
+            background-repeat: no-repeat;
+            flex-direction: column;
+        }
+        .darksoul-sidenav
+        {
+            margin: auto;
+            width: 200px;
+            height: 600px;
+            background-color: rgba(255, 255, 255, 0.228);
+            border-radius: 20px;
+            border: 1px solid rgb(255, 255, 255);
+            backdrop-filter: blur(20px);
+            display: flex;
+            flex-direction: column;
+            transition: all 0.9s;
+            zoom: 0.9
+        } 
+        .darksoul-sidenav .header
+        {
+            margin: auto;
+            width: 100%;
+            height: 20%;
+            border-radius: 20px;
+            display: flex;
+            
+        }
+        .darksoul-sidenav .header .profile
+        {
+            margin: auto;
+            margin-left: 10px;
+            margin-right: -8px;
+            width: 70%;
+            height: 60%;
+            display: flex;
+        }
+        .darksoul-sidenav .header .profile .profile-pic
+        {
+            margin: auto;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: white;
+            display: flex;
+        }
+        .darksoul-sidenav .header .profile .profile-pic img
+        {
+            width: 30px;
+            height: 30px;
+            margin: auto;
+            border-radius: 50%;
+        }
+        .darksoul-sidenav .header .profile .profile-name
+        {
+            margin: auto;
+            margin-left: 0px;
+            width: 60%;
+            height: 50%;
+            display: flex;
+            flex-direction: column;
+            
+        }
+        .darksoul-sidenav .header .profile .profile-name span
+        {
+            margin: auto;
+            margin-left: 0px;
+            margin-bottom: 0px;
+            font-size: 7px;
+        } 
+        .darksoul-sidenav .header .profile .profile-name p 
+        {
+            margin: auto;
+            margin-left: 0px;
+            margin-top: 0px;
+            font-size: small;
+            font-weight: 600;
+        }
+        .darksoul-sidenav .header .btn
+        {
+            margin: auto;
+            width: 30%;
+            height: 60%;
+            display: flex;
+        }
+        .darksoul-sidenav .header .btn .circle
+        {
+            margin: auto;
+            margin-right: -15px;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: linear-gradient(90deg, white 50%, rgba(255, 255, 255, 0) 50%);
+            display: flex;
+            cursor: pointer;
+        }
+        .darksoul-sidenav .header .btn .circle img
+        {
+            margin: auto;
+            margin-left: 5px;
+        }
+        .darksoul-sidenav .menus
+        {
+            margin: auto;
+            width: 100%;
+            height: 60%;
+            background-color: rgba(255, 255, 255, 0);
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        .darksoul-sidenav .menus p
+        {
+            width: 50%;
+            height: 20px;
+            margin-left: 15px;
+            font-size: xx-small;
+        }
+        .darksoul-sidenav .menus .menu-container
+        {
+            width: 100%;
+            height: 50%;
+            display: flex;
+            flex-direction: column;
+            margin: auto;
+            margin-top: 0px;
+        }
+        .darksoul-sidenav .menus .menu-container .menu
+        {
+            width: 90%;
+            height: 50px;
+            margin: auto;
+            display: flex;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .darksoul-sidenav .menus .menu:hover
+        {
+            background-color: white;
+            box-shadow: 1px 1px 20px white;
+        }
+        .darksoul-sidenav .menus .menu-container .menu .menu-img
+        {
+            margin: auto;
+            display: flex;
+            width: 20%;
+            height: 100%;
+        }
+        .darksoul-sidenav .menus .menu-container .menu .menu-name
+        {
+            margin: auto;
+            display: flex;
+            width: 80%;
+            height: 50%;
+        }
+        .darksoul-sidenav .menus .menu .menu-img img
+        {
+            margin: auto;
+        }
+        .darksoul-sidenav .menus .menu .menu-name p 
+        {
+            height: fit-content;
+            font-size: x-small;
+            margin: auto;
+            margin-left: 0px;
+        }
+        .service
+        {
+            height: 30% !important;
+        }
+        .darksoul-sidenav .footer
+        {
+            margin: auto;
+            width: 100%;
+            height: 20%;
+            background-color: rgba(255, 255, 255, 0);
+            border-radius: 20px;
+            display: flex;
+        }
+        .darksoul-sidenav .footer .create-task
+        {
+            width: 90%;
+            height: 80%;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            background-color: white;
+            border-radius: 15px;
+        }
+        .darksoul-sidenav .footer .create-task img
+        {
+            margin: auto;
+            margin-bottom: 0px;
+            cursor: pointer;
+        }
+        .darksoul-sidenav .footer .create-task img:hover
+        {
+            filter: drop-shadow(1px 1px 15px #313131);
+        }
+        .darksoul-sidenav .footer .create-task p
+        {
+            font-size: x-small;
+            margin: auto;
+            margin-bottom: 0px;
+        }
+        .darksoul-sidenav .footer .create-task span
+        {
+            font-size: 7px;
+            margin: auto;
+            margin-top: 0px;
+        }
+
+        .disclaimer
+        {
+           margin: auto;
+            width: fit-content;
+            color: rgb(0, 0, 0);
+            text-align: center;
+            font-family: 'Belanosima', sans-serif;
+        }
+        .disclaimer a
+        {
+            text-decoration: none;
+            color: #202020;
+            font-family: "Kaushan Script", cursive;
+            font-weight: 900;
+        }
+        .disclaimer a:hover
+        {
+            text-decoration: overline;
+        }

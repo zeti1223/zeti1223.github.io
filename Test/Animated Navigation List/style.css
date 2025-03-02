@@ -1,0 +1,150 @@
+nav {
+  filter: drop-shadow(0.25rem 0.25rem 0.5rem #0005);
+  width: 100%;
+  max-width: 14rem;
+}
+
+@keyframes firstShow {
+  0%,
+  100% {
+    transform: perspective(1000px) translate3d(0, 0, 0em);
+  }
+  50% {
+    transform: perspective(1000px) translate3d(0, 0, 3em);
+  }
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+ul {
+  position: relative;
+  aperspective: 1000px;
+  list-style: none;
+  padding-left: 0;
+  box-sizing: border-box;
+  border-radius: 1rem;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  font: lighter 1rem Helvetica, sans-serif;
+
+  li {
+    height: 3rem;
+    display: flex;
+    background: linear-gradient(#00000005, #0000), #fff;
+    aborder-bottom: 1px solid #0001;
+    abackground-clip: padding-box;
+    box-shadow: inset 0 0 1rem -0.5rem #0002;
+    transition: transform 0.35s, box-shadow 0.35s, background 0.35s;
+    transform: translate3d(0, 0, 0);
+    opacity: 0;
+    animation: firstShow 0.5s ease-in-out, show 0.15s linear forwards;
+
+    &:nth-child(1) {
+      animation-delay: 0.5s;
+    }
+    &:nth-child(2) {
+      animation-delay: 0.6s;
+    }
+    &:nth-child(3) {
+      animation-delay: 0.7s;
+    }
+    &:nth-child(4) {
+      animation-delay: 0.8s;
+    }
+    &:nth-child(5) {
+      animation-delay: 0.9s;
+    }
+    &:nth-child(6) {
+      animation-delay: 1s;
+    }
+    &:nth-child(7) {
+      animation-delay: 1.1s;
+    }
+    &:nth-child(8) {
+      animation-delay: 1.2s;
+    }
+    &:nth-child(9) {
+      animation-delay: 1.3s;
+    }
+
+    &:first-child {
+      border-radius: 1rem 1rem 0 0;
+    }
+
+    &:last-child {
+      border-radius: 0 0 1rem 1rem;
+    }
+
+    &:hover,
+    &:focus-within {
+      transform: translate3d(0, 0, 3rem);
+    }
+
+    &:hover + &,
+    &:has(+ &:focus-within),
+    &:focus + &,
+    &:has(+ &:focus-within) {
+      box-shadow: inset 0 1rem 1rem -1rem #0003;
+      transform: translate3d(0, 0, 2rem);
+    }
+    &:has(+ &:hover),
+    &:has(+ &:focus-within) {
+      box-shadow: inset 0 -1rem 1rem -1rem #0003;
+    }
+    &:hover + & + &,
+    &:focus-within + & + & {
+      box-shadow: inset 0 1rem 0.5rem -0.75rem #0002;
+    }
+    &:has(+ & + &:hover),
+    &:has(+ & + &:focus-within) {
+      box-shadow: inset 0 -1rem 0.5rem -0.75rem #0002;
+    }
+  }
+
+  h2,
+  a {
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    flex: 1;
+    padding: 0 1rem;
+    text-decoration: none;
+    color: #000;
+  }
+
+  h2 {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  i {
+    margin-right: 0.25em;
+    width: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion) {
+  nav * {
+    transition-duration: 0s !important;
+    animation-duration: 0s !important;
+  }
+}
+
+body {
+  aperspective: 1000px;
+  position: relative;
+  margin: 0;
+  min-height: 100vh;
+  overflow: clip;
+  display: grid;
+  place-items: center;
+  transition: background 1s;
+  background: #fff;
+}

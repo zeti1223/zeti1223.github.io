@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3D Flip Book</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="flipbook centered" id="flipbook">
+      <div class="leaf">
+        <div
+          class="page front title external"
+          style="background-color: #e76f51"
+        >
+          <h1>Flip Book</h1>
+          <em>A lil dive into 3d css</em>
+        </div>
+        <div class="page back" style="background-color: #2a9d8f">
+          <div class="pageNumber">i</div>
+
+          <img src="01.png" alt="" style="width: 100%" />
+        </div>
+      </div>
+      <div class="leaf">
+        <div class="page front" style="background-color: #2a9d8f">
+          <div class="pageNumber">ii</div>
+          <h2>Contents</h2>
+          <div class="contents-row">
+            <div class="text">Cat Ipsum</div>
+            <div class="spacer"></div>
+            <div class="text">1</div>
+          </div>
+          <div class="contents-row">
+            <div class="text">Lorum Ipsum</div>
+            <div class="spacer"></div>
+            <div class="text">3</div>
+          </div>
+        </div>
+        <div class="page back" style="background-color: #e9c46a">
+          <div class="pageNumber">1</div>
+          <h2>Cat Ipsum</h2>
+          <p>
+            Attack like a vicious monster fight an alligator and win. Catty
+            ipsum chew the plant and love to play with owner's hair tie kick up
+            litter open the door, let me out, let me out, let me-out, let
+            me-aow, let meaow, meaow!
+          </p>
+        </div>
+      </div>
+      <div class="leaf">
+        <div class="page front" style="background-color: #e9c46a">
+          <div class="pageNumber">2</div>
+          I meant to do that now i shall wash myself intently play riveting
+          piece on synthesizer keyboard see brother cat receive pets, attack out
+          of jealousy. Sit and stare. Sleep on my human's head cereal boxes make
+          for five star accommodation but whenever a door is opened, rush in
+          before the human, so chew foot.
+        </div>
+        <div class="page back" style="background-color: #f4a261">
+          <div class="pageNumber">3</div>
+          <h2>Lorum Ipsum</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet
+            sagittis fringilla. Duis consequat nisl dui, non dignissim metus
+            mattis vitae. Vivamus eget mi eu purus sollicitudin gravida.
+          </p>
+        </div>
+      </div>
+      <div class="leaf">
+        <div class="page front" style="background-color: #f4a261">
+          <div class="pageNumber">4</div>
+          <p>
+            Nulla vulputate porta orci eu scelerisque. Aliquam erat volutpat.
+            Nullam efficitur magna vitae augue finibus, id bibendum sem
+            dignissim. Nam sit amet erat metus. Curabitur dignissim diam
+            porttitor mauris cursus ultrices. Nulla et consectetur risus.
+            Integer in rhoncus turpis. Suspendisse potenti.
+          </p>
+        </div>
+        <div class="page back external" style="background-color: #e76f51">
+          <img src="02.png" alt="" style="width: 100%" />
+          <small><h3>The end!</h3></small>
+          <p>Thanks for reading my book :)</p>
+        </div>
+      </div>
+    </div>
+    <div class="controls centered">
+      <button id="prevPage">&lt; Previous</button>
+      <button id="nextPage">Next &gt;</button>
+    </div>
+    <script src="javascript.js"></script>
+  </body>
+</html>

@@ -1,0 +1,138 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+body {
+  background-color: #c5ebaa;
+}
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+h1 {
+  color: #2a2a2a;
+}
+.container {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+}
+h1 {
+  font-size: 4em;
+}
+.score-container {
+  color: #2a2a2a;
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+#score {
+  font-weight: 600;
+}
+.grid {
+  width: 25em;
+  height: 25em;
+  background-color: #f6f193;
+  border: 5px solid #f2c18d;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 0.5em;
+}
+.box {
+  width: 97.5px;
+  height: 97.5px;
+  border: 5px solid #f2c18d;
+  font-size: 40px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cover-screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #c5ebaa;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#start-button {
+  background-color: #2a2a2a;
+  padding: 20px 30px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  color: #fff;
+}
+#result {
+  margin: 5px 0;
+  font-size: 18px;
+}
+h2 {
+  font-size: 30px;
+}
+.hide {
+  display: none;
+}
+.box-2 {
+  background-color: red;
+  color: #fff;
+}
+.box-4 {
+  background-color: olivedrab;
+  color: #fff;
+}
+
+.box-8 {
+  background-color: pink;
+  color: white;
+}
+
+.box-16 {
+  background-color: blue;
+  color: white;
+}
+
+.box-32 {
+  background-color: gray;
+  color: white;
+}
+
+.box-64 {
+  background-color: yellowgreen;
+  color: white;
+}
+
+.box-128 {
+  background-color: #2a2a2a;
+  color: white;
+}
+
+.box-256 {
+  background-color: cadetblue;
+  color: white;
+}
+
+.box-512 {
+  background-color: crimson;
+  color: white;
+}
+
+.box-1024 {
+  background-color: darkkhaki;
+  color: white;
+}
+
+.box-2048 {
+  background-color: coral;
+  color: white;
+}

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+    <title>The Virtual Whiteboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .draggable {
+            cursor: move;
+        }
+    </style>
+</head>
+
+<body class="bg-green-100">
+    <div class="flex justify-center items-center h-screen">
+        <div class="max-w-3xl w-full bg-white 
+                    shadow-lg rounded-lg p-8">
+            <h1 class="text-3xl font-semibold
+                    mb-8 text-center">
+                Virtual Whiteboard
+            </h1>
+            <div class="border border-green-300
+                        rounded-lg mb-6 p-4 relative">
+                <div class="flex justify-center items-center">
+                    <canvas id="whiteboard" width="700" height="500"></canvas>
+                </div>
+                <div class="absolute top-0 right-0 p-2">
+                    <button id="clearBtn" class="px-4 py-2 bg-blue-500
+                                                text-white rounded-lg 
+                                                hover:bg-blue-600">
+                        Clear
+                    </button>
+                    <button id="eraserBtn" class="ml-2 px-4 py-2 bg-red-500
+                                                text-white rounded-lg 
+                                                hover:bg-red-600">
+                        Eraser
+                    </button>
+                </div>
+            </div>
+            <div class="flex justify-between items-center mb-4">
+                <div class="relative flex items-center">
+                    <label for="toolSelect" class="mr-2">
+                        Tool:
+                    </label>
+                    <select id="toolSelect"
+                            class="px-3 py-2 bg-gray-200 
+                                rounded-lg appearance-none">
+                        <option value="pen">Pen</option>
+                        <option value="line">Line</option>
+                        <option value="rectangle">Rectangle</option>
+                        <option value="circle">Circle</option>
+                        <option value="text">Text</option>
+                    </select>
+                </div>
+                <div>
+                    <button id="saveBtn" class="px-4 py-2 bg-green-500
+                                                text-white rounded-lg 
+                                                hover:bg-green-600">
+                        Save
+                    </button>
+                    <input type="file" id="imageInput"
+                        accept="image/*" class="hidden">
+                    <button id="imageBtn" class="px-4 py-2 bg-yellow-500 
+                                                text-white rounded-lg 
+                                                hover:bg-yellow-600">
+                        Insert Image
+                    </button>
+                </div>
+            </div>
+            <div id="textInput" class="mb-4 hidden">
+                <input type="text" id="textBox"
+                    class="border border-gray-300 rounded
+                            px-3 py-2 focus:outline-none">
+                <button id="textBtn"
+                        class="ml-2 px-4 py-2 bg-blue-500 
+                            text-white rounded-lg 
+                            hover:bg-blue-600">
+                    Add Text
+                </button>
+            </div>
+        </div>
+    </div>
+    <script>
+        const canvas = document.getElementById('whiteboard');
+        const context = canvas.getContext('2d');
+        let isDrawing = false;
+        let lastX = 0;
+        let lastY = 0;
+        let tool = 'pen';
+        let shapes = [];
+        let drag = false;
+        let dragStartX, dragStartY;
+
+        function draw(e) {
+            if (!isDrawing) return;
+            const { offsetX, offsetY } = e;
+            context.lineWidth = 2;
+            context.strokeStyle = '#000';
+            context.fillStyle = '#000';
+            if (tool === 'pen') {
+                context.lineTo(offsetX, offsetY);
+                context.stroke();
+                lastX = offsetX;
+                lastY = offsetY;
+            } else if (tool === 'line') {
+                context.clearRect(0, 0, canvas.width, canvas.height);
+                context.beginPath();
+                context.moveTo(lastX, lastY);
+                context.lineTo(offsetX, offsetY);
+                context.stroke();
+            } else if (tool === 'rectangle') {
+                context.clearRect(0, 0, canvas.width, canvas.height);
+                context.beginPath();
+                context.rect(lastX, lastY, offsetX - lastX, offsetY - lastY);
+                context.stroke();
+            } else if (tool === 'circle') {
+                context.clearRect(0, 0, canvas.width, canvas.height);
+                const radius = Math.sqrt(Math.pow(offsetX - lastX, 2) +
+                    Math.pow(offsetY - lastY, 2));
+                context.beginPath();
+                context.arc(lastX, lastY, radius, 0, Math.PI * 2);
+                context.stroke();
+            }
+        }
+        canvas.addEventListener('mousedown', (e) => {
+            isDrawing = true;
+            if (tool !== 'pen') {
+                lastX = e.offsetX;
+                lastY = e.offsetY;
+            }
+            if (tool === 'line' || tool === 'rectangle' || tool === 'circle') {
+                drag = true;
+                dragStartX = e.offsetX;
+                dragStartY = e.offsetY;
+            }
+        });
+        canvas.addEventListener('mousemove', (e) => {
+            if (tool === 'pen' && isDrawing) {
+                draw(e);
+            } else if (tool === 'line' || tool === 'rectangle' 
+                                        || tool === 'circle') {
+                if (!drag) return;
+                const { offsetX, offsetY } = e;
+                context.clearRect(0, 0, canvas.width, canvas.height);
+                shapes.forEach(shape => {
+                    if (shape.type === 'line') {
+                        context.beginPath();
+                        context.moveTo(shape.startX, shape.startY);
+                        context.lineTo(shape.endX, shape.endY);
+                        context.stroke();
+                    } else if (shape.type === 'rectangle') {
+                        context.beginPath();
+                        context.rect(shape.startX, shape.startY,
+                            shape.endX - shape.startX,
+                            shape.endY - shape.startY);
+                        context.stroke();
+                    } else if (shape.type === 'circle') {
+                        context.beginPath();
+                        context.arc(shape.startX, shape.startY,
+                            shape.radius, 0, Math.PI * 2);
+                        context.stroke();
+                    }
+                });
+                if (tool === 'line') {
+                    context.beginPath();
+                    context.moveTo(lastX, lastY);
+                    context.lineTo(offsetX, offsetY);
+                    context.stroke();
+                } else if (tool === 'rectangle') {
+                    context.beginPath();
+                    context.rect(lastX, lastY,
+                        offsetX - lastX, offsetY - lastY);
+                    context.stroke();
+                } else if (tool === 'circle') {
+                    const radius = Math.sqrt(Math.pow(offsetX - lastX, 2) +
+                        Math.pow(offsetY - lastY, 2));
+                    context.beginPath();
+                    context.arc(lastX, lastY, radius, 0, Math.PI * 2);
+                    context.stroke();
+                }
+            }
+        });
+        canvas.addEventListener('mouseup', (e) => {
+            isDrawing = false;
+            if (tool === 'line' || tool === 'rectangle' 
+                                || tool === 'circle') {
+                shapes.push({
+                    type: tool,
+                    startX: dragStartX,
+                    startY: dragStartY,
+                    endX: e.offsetX,
+                    endY: e.offsetY,
+                    radius: Math.sqrt(Math
+                                    .pow(e.offsetX - dragStartX, 2) +
+                            Math.pow(e.offsetY - dragStartY, 2))
+                });
+            }
+            drag = false;
+        });
+        document.getElementById('clearBtn')
+                .addEventListener('click', () => {
+                    context.clearRect(0, 0, canvas.width, canvas.height);
+                    shapes = [];
+            });
+        document.getElementById('eraserBtn')
+            .addEventListener('click', () => {
+                tool = 'eraser';
+            });
+        canvas.addEventListener('mousemove', (e) => {
+            if (tool === 'eraser' && isDrawing) {
+                const { offsetX, offsetY } = e;
+                context.clearRect(offsetX - 5, offsetY - 5, 10, 10);
+            }
+        });
+        document.getElementById('toolSelect')
+            .addEventListener('change', (e) => {
+                tool = e.target.value;
+                if (tool === 'text') {
+                    document.getElementById('textInput')
+                            .classList.remove('hidden');
+                    document.getElementById('textBox').focus();
+                } else {
+                    document.getElementById('textInput')
+                            .classList.add('hidden');
+                }
+            });
+        document.getElementById('textBtn')
+                .addEventListener('click', () => {
+            const text = document.getElementById('textBox')
+                                .value;
+            context.font = '16px Arial';
+            context.fillText(text, lastX, lastY);
+            document.getElementById('textInput')
+                    .classList.add('hidden');
+            tool = 'pen';
+        });
+        document.getElementById('imageBtn')
+                .addEventListener('click', () => {
+            document.getElementById('imageInput').click();
+        });
+        document.getElementById('imageInput')
+                .addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            const reader = new FileReader();
+            reader.onload = () => {
+                const img = new Image();
+                img.onload = () => {
+                    context.drawImage(img, 0, 0);
+                };
+                img.src = reader.result;
+            };
+            reader.readAsDataURL(file);
+        });
+        document.getElementById('saveBtn')
+                .addEventListener('click', () => {
+            const image = canvas.toDataURL('image/png');
+            const link = document.createElement('a');
+            link.href = image;
+            link.download = 'whiteboard.png';
+            link.click();
+        });
+    </script>
+</body>
+
+</html>

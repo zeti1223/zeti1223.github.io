@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Form</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="sign_up form_container">
+        <form>
+          <h1>Create Account</h1>
+          <div class="icons">
+            <a href=""><i class="fa-brands fa-google-plus-g"></i></a>
+            <a href=""><i class="fa-brands fa-facebook"></i></a>
+            <a href=""><i class="fa-brands fa-github"></i></a>
+            <a href=""><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+          <p>or use your email for registration</p>
+          <input class="name" type="text" placeholder="Name" />
+          <p class="namefield text">
+            <i class="fa-solid fa-circle-exclamation"></i> Please enter a valid
+            username
+          </p>
+          <input class="email" type="email" placeholder="Email" />
+          <p class="emailfield text">
+            <i class="fa-solid fa-circle-exclamation"></i> Please enter a valid
+            email-address
+          </p>
+          <div class="passdiv">
+            <input class="pass" type="password" placeholder="Password" /><i
+              class="fa-solid fa-lock show-hide"
+            ></i>
+          </div>
+          <p class="passfield text">
+            <i class="fa-solid fa-circle-exclamation"></i> Please enter atleast
+            6-12 character longer with numbers, symbol, small and capital
+            letter.
+          </p>
+          <button>SIGN UP</button>
+        </form>
+      </div>
+      <div class="sign_in form_container">
+        <form>
+          <h1>Sign In</h1>
+          <div class="icons">
+            <a href=""><i class="fa-brands fa-google-plus-g"></i></a>
+            <a href=""><i class="fa-brands fa-facebook"></i></a>
+            <a href=""><i class="fa-brands fa-github"></i></a>
+            <a href=""><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+          <p>or use your email password</p>
+          <input class="email1" type="email" placeholder="Email" />
+          <p class="emailfield1 text">
+            <i class="fa-solid fa-circle-exclamation"></i> Please enter a valid
+            email-address
+          </p>
+          <div class="passdiv">
+            <input class="pass1" type="password" placeholder="Password" /><i
+              class="fa-solid fa-lock show-hide"
+            ></i>
+          </div>
+          <p class="passfield1 text">
+            <i class="fa-solid fa-circle-exclamation"></i> Please enter a valid
+            password
+          </p>
+          <p class="forgetpass">Forget Your Password?</p>
+          <button>SIGN IN</button>
+        </form>
+      </div>
+      <div class="toggle_container">
+        <div class="toggle">
+          <div class="toggle_panel toggle_left">
+            <h1>Welcome Back!</h1>
+            <p>Enter your personal details to use all of site features</p>
+            <button class="hidden" id="login">SIGN IN</button>
+          </div>
+          <div class="toggle_panel toggle_right">
+            <h1>Hello, Friend!</h1>
+            <p>
+              Register with your personal details to use all of the site
+              features
+            </p>
+            <button class="hidden" id="register">SIGN UP</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="javascript.js"></script>
+  </body>
+</html>

@@ -1,0 +1,133 @@
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+:root {
+  --container-width: 1600px;
+  --album-width: 200px;
+}
+h1,
+h2 {
+  font-weight: normal;
+  margin: 0;
+}
+figure {
+  margin: 0;
+  padding: 0;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #000;
+  color: white;
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.container {
+  max-width: var(--container-width);
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.album__list {
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+  background-color: #161616;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.album__item {
+  max-width: var(--album-width);
+  width: 100%;
+  cursor: pointer;
+  position: relative;
+}
+.album__item:hover .album__artwork {
+  transform-origin: top;
+  transform: perspective(75em) rotateX(20deg);
+  transition: 0.4s;
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.3);
+}
+.album__item:hover .album__artwork:before {
+  transform: rotate(45deg) translate(0px, -70%);
+  filter: blur(6px);
+}
+.album__item:hover .album__play {
+  opacity: 1;
+  transform: translateY(0);
+  transition: 0.4s;
+}
+.album__info {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 8px 0;
+}
+.album__title h1 {
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+.album__title h2 {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+.album__artwork {
+  position: relative;
+  transition: 0.4s;
+  position: relative;
+  transform-origin: 50% -40px;
+  overflow: hidden;
+  margin-bottom: 16px;
+  border-radius: 5px;
+}
+.album__artwork img {
+  border-radius: inherit;
+  display: block;
+}
+.album__artwork:before {
+  content: "";
+  background: rgba(255, 255, 255, 0.1);
+  transform: rotate(45deg) translate(0px, -90%);
+  filter: blur(4px);
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  transition: 0.4s;
+}
+.album__play {
+  background: white;
+  border-radius: 100%;
+  display: block;
+  width: 24px;
+  height: 24px;
+  padding: 4px;
+  opacity: 0;
+  transition: 0.4s;
+  transform: translateY(10px);
+}

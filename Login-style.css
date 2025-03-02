@@ -1,0 +1,75 @@
+@font-face {
+    font-family: 'Font';
+    src: url('fonts/SpaceMono-Regular.ttf') format('truetype');
+}
+
+body {
+    font-family: 'Font', sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.login-container {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    padding: 20px;
+    text-align: center;
+}
+
+h2{
+    color: #202020;
+    font-size: 150%;
+    margin-bottom: 20px;
+}
+p{
+    color: #202020;
+    font-size: 90%;
+    margin-bottom: 20px;
+}
+
+.form-control {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #2A629A;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #003285;
+}
+
+#error-message {
+    color: red;
+    margin-top: 10px;
+}
+
+a{
+    text-decoration: none;
+    text-align: center;
+}

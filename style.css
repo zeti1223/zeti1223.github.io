@@ -1,0 +1,31 @@
+@font-face {
+    font-family: 'Font';
+    src: url('fonts/SpaceMono-Regular.ttf') format('truetype');
+}
+
+body {
+    font-family: 'Font', sans-serif;
+    background-color: #f4f4f4;
+    height: 100vh;
+    margin: 10;
+}
+
+p{
+    color: #202020;
+    font-size: 300%;
+    cursor: default;
+}
+
+p:hover{
+    font-weight: bolder;
+    text-shadow: 10px 0px 10px rgba(0, 0, 0, 0.05);
+}
+h6{
+    color: #202020;
+    font-size: 100%;
+    cursor: default;
+}
+
+a{
+    text-decoration: none;
+}

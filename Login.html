@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="Login-style.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Bejelentkezés</h2>
+        <a href="Login2.html">
+            <p>Email Login</p>
+        </a>
+        <form id="login-form">
+            <div class="form-control">
+                <label for="username">Felhasználónév</label>
+                <input type="text" id="username" required>
+            </div>
+            <div class="form-control">
+                <label for="password">Jelszó</label>
+                <input type="password" id="password" required>
+            </div>
+            <button type="submit">Belépés</button>
+        </form>
+        <p id="error-message"></p>
+    </div>
+    <script src="Login-script.js"></script>
+    <script src="inspect.js"></script>
+</body>
+</html>
