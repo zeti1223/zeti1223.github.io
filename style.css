@@ -11,7 +11,7 @@ body {
 
 p{
     color: #202020;
-    font-size: 10vw;
+    font-size: 80px;
 }
 
 p:hover{
@@ -29,7 +29,6 @@ a{
 }
 
 #style2 {
-    position: fixed;
     bottom: 0;
     width: 100%;
 }
