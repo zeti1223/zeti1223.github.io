@@ -11,7 +11,7 @@ body {
 
 p{
     color: #202020;
-    font-size: 10vw;
+    font-size: 80px;
 }
 
 p:hover{
@@ -19,7 +19,7 @@ p:hover{
     color: #d71921;    
 }
 p::before{
-    content:"-";
+    content:"+";
     color: #202020;
 }
 
