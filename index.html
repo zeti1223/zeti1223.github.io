@@ -43,6 +43,12 @@
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             }, 1600); // Delay for 2 seconds
         });
+
+        document.addEventListener('keydown', function (e) {
+          if (e.ctrlKey && e.key === 'Enter') {
+          window.location.href = 'Test/Navigation Hover Effect Pure CSS/index.html';
+          }
+        });
     </script>
     <script src="inspect.js"></script>
   </body>
