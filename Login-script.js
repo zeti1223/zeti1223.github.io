@@ -8,7 +8,7 @@ document.getElementById("login-form").addEventListener("submit", function(event)
     if (username === "admin" && password === "D3c23admin") {
         window.location.href = "admin.html";
     } else if (username === "zalan" && password === "ZaxZax") {
-        window.location.href = "index2.html";
+        window.location.href = "zalan.html";
     } else if (username === "zsoltbotyanszki" && password === "19810105") {
         window.location.href = "Bozso.html";
     } else {
