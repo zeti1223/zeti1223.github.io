@@ -27,7 +27,7 @@ ul li a{
 ul li a:hover{
     color: #fff;
     -webkit-text-stroke: 1px #000;
-    transition: 0.5s;
+    transition: 0.25s;
 } 
 
 ul li a:before,
@@ -36,7 +36,7 @@ ul li a:after {
     position: absolute;
     top: 0;
     left: 0;
-  transition: 0.5s;}
+  transition: 0.25s;}
 
  ul li a:hover:before {
     color: #f00;
