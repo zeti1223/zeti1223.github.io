@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2048 Game</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container hide">
+      <div class="heading">
+        <div class="score-container">
+          Score:
+          <span id="score">0</span>
+        </div>
+      </div>
+      <div class="grid"></div>
+    </div>
+    <div class="cover-screen">
+      <h2 id="over-text" class="hide">Game Over</h2>
+      <p id="result"></p>
+      <button id="start-button">Start Game</button>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
