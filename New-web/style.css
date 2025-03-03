@@ -8,7 +8,7 @@ body{
     display: flex;
     min-height: 100vh;
     background: #000;
-    overflow: hidden;
+/*    overflow: hidden; */
 }
 ul li{
     list-style: none;
