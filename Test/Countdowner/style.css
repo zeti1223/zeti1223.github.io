@@ -1,0 +1,34 @@
+body {
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  background-color: black;
+}
+
+.countdown-container {
+  text-align: center;
+  font-size: xx-large;
+  color:#ffffff;
+}
+
+#countdown {
+  font-size: 2em;
+  margin-top: 20px;
+}
+
+.loader {
+  border: 20px solid #0a0c0d;
+  border-top: 20px solid #dc2f02;
+  border-radius: 75%;
+  width: 100px;
+  height: 100px;
+  animation: spin 0.9s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
