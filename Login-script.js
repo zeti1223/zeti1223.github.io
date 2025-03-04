@@ -6,11 +6,11 @@ document.getElementById("login-form").addEventListener("submit", function(event)
     const errorMessage = document.getElementById("error-message");
 
     if (username === "admin" && password === "D3c23admin") {
-        window.location.href = "admin.html";
+        window.location.href = "Admin/index.html";
     } else if (username === "zalan" && password === "ZaxZax") {
-        window.location.href = "zalan.html";
+        window.location.href = "Users/zalan.html";
     } else if (username === "zsoltbotyanszki" && password === "19810105") {
-        window.location.href = "bozso.html";
+        window.location.href = "Users/bozso.html";
     } else {
         errorMessage.textContent = "Hibás felhasználónév vagy jelszó.";
     }
