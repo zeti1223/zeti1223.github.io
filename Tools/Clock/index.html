@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <style>
+        :root {
+  --r: 0;
+  --g: 255;
+  --b: 157;
+}
+
+body {
+    background: #0d0d0d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    cursor: none;
+    user-select: none; /* Add this line */
+}
+
+#clock {
+    color: rgb(var(--r), var(--g), var(--b));
+    font-size: 20vw;
+    font-family: serif;
+    font-weight: bolder;
+    line-height: 0.8;
+    text-shadow: 0 0 40px rgba(var(--r), var(--g), var(--b), 0.78);
+    user-select: none; /* Add this line */
+}
+
+    </style>
+</head>
+<body>
+    <div id="clock">error</div>
+</body>
+<script>
+// Calling showTime function at every second
+setInterval(showTime, 1000);
+
+// Defining showTime function
+function showTime() {
+    // Getting current time and date
+    let time = new Date();
+    let hour = time.getHours();
+    let min = time.getMinutes();
+    let sec = time.getSeconds();
+
+    hour = hour < 10 ? "0" + hour : hour;
+    min = min < 10 ? "0" + min : min;
+    sec = sec < 10 ? "0" + sec : sec;
+
+    let currentTime = hour + ":" + min + ":" + sec;
+
+    // Displaying the time
+    document.getElementById("clock").innerHTML = currentTime;
+}
+
+showTime();
+
+document.addEventListener("contextmenu", (e) => {
+    e.preventDefault();
+});
+
+document.addEventListener('keydown', function (e) {
+    if (e.key === 'f') {
+        if (document.documentElement.requestFullscreen) {
+        document.documentElement.requestFullscreen();
+    } else if (document.documentElement.mozRequestFullScreen) { // Firefox
+        document.documentElement.mozRequestFullScreen();
+    } else if (document.documentElement.webkitRequestFullscreen) { // Chrome, Safari and Opera
+        document.documentElement.webkitRequestFullscreen();
+    } else if (document.documentElement.msRequestFullscreen) { // IE/Edge
+        document.documentElement.msRequestFullscreen();
+    }
+    }
+});
+</script>
+</html>

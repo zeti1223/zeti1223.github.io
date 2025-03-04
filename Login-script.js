@@ -10,7 +10,7 @@ document.getElementById("login-form").addEventListener("submit", function(event)
     } else if (username === "zalan" && password === "ZaxZax") {
         window.location.href = "zalan.html";
     } else if (username === "zsoltbotyanszki" && password === "19810105") {
-        window.location.href = "Bozso.html";
+        window.location.href = "bozso.html";
     } else {
         errorMessage.textContent = "Hibás felhasználónév vagy jelszó.";
     }
