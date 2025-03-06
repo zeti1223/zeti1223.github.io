@@ -11,6 +11,8 @@ document.getElementById("login-form").addEventListener("submit", function(event)
         window.location.href = "Users/zalan.html";
     } else if (username === "zsoltbotyanszki" && password === "19810105") {
         window.location.href = "Users/bozso.html";
+    } else if (username === "NimY" && password === "NimYvok111") {
+        window.location.href = "Users/nimrod.html";
     } else {
         errorMessage.textContent = "Hibás felhasználónév vagy jelszó.";
     }

@@ -1,0 +1,29 @@
+@font-face {
+    font-family: 'Font';
+    src: url('../Fonts/nothing.ttf') format('truetype');
+}
+
+body {
+    font-family: 'Font', sans-serif;
+    background-color: #202020;
+    margin: 1vw;
+}
+
+p{
+    color: #f4f4f4;
+    font-size: 80px;
+}
+
+p:hover{
+    transition: all 200ms ease-in;
+    color: #ffd900;    
+}
+p::before{
+    content:"+";
+    color: #f4f4f4;
+}
+
+a{
+    text-decoration: none;
+    cursor: default;
+}
