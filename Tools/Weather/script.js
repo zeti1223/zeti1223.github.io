@@ -29,6 +29,11 @@ document.getElementById('cityInput').addEventListener('input', function () {
     typingTimer = setTimeout(fetchWeather, typingInterval);
 });
 
+// Add event listener to city element to show city input field again
+city.addEventListener('click', function () {
+    document.getElementById('cityInput').style.display = 'block';
+});
+
 async function fetchWeather() {
     try {
         weatherContainer.innerHTML = '';
@@ -46,7 +51,7 @@ async function fetchWeather() {
         const response = await fetch(apiUrl);
         const data = await response.json();
 
-        //Display error if user types invalid city or no city
+
         if (data.cod == '400' || data.cod == '404') {
             error.innerHTML = `Nem valós város. Kérjük, adjon meg egy másik várost!`;
             return;
