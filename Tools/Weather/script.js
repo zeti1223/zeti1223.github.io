@@ -26,7 +26,9 @@ const typingInterval = 2000; // 2 seconds
 
 document.getElementById('cityInput').addEventListener('input', function () {
     clearTimeout(typingTimer);
-    typingTimer = setTimeout(fetchWeather, typingInterval);
+    if (document.getElementById('cityInput').value.trim() !== '') {
+        typingTimer = setTimeout(fetchWeather, typingInterval);
+    }
 });
 
 // Add event listener to city element to show city input field again
