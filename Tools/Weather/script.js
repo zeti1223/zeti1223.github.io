@@ -1,6 +1,5 @@
 // Use your own OpenWeatherMap API Key below
 const apiKey = '1932ba53c628a41013a6d5e0a645b415'
-const day = 1;
 
 const weatherContainer = document.getElementById("weather");
 const city = document.getElementById("city");
@@ -43,7 +42,7 @@ async function fetchWeather() {
         error.innerHTML = '';
         city.innerHTML = '';
 
-        const cnt = (day - 1) * 8; // 8 data points per day
+        const cnt = 8; // 8 data points per day
         const cityInputtedByUser = document.getElementById('cityInput').value;
 
         // Hide the input field after the user enters a city
