@@ -1,5 +1,6 @@
 // Use your own OpenWeatherMap API Key below
 const apiKey = '1932ba53c628a41013a6d5e0a645b415'
+const day = 1;
 
 const weatherContainer = document.getElementById("weather");
 const city = document.getElementById("city");
@@ -42,7 +43,7 @@ async function fetchWeather() {
         error.innerHTML = '';
         city.innerHTML = '';
 
-        const cnt = 10;
+        const cnt = (day - 1) * 8; // 8 data points per day
         const cityInputtedByUser = document.getElementById('cityInput').value;
 
         // Hide the input field after the user enters a city
@@ -53,12 +54,13 @@ async function fetchWeather() {
         const response = await fetch(apiUrl);
         const data = await response.json();
 
-
         if (data.cod == '400' || data.cod == '404') {
             error.innerHTML = `Nem valós város. Kérjük, adjon meg egy másik várost!`;
+            // Show the input field again if the city is not valid
+            document.getElementById('cityInput').style.display = 'block';
             return;
         }
-        //Display weather data for each 3 hour increment
+        // Display weather data for each 3 hour increment
         data.list.forEach(hourlyWeatherData => {
             const hourlyWeatherDataDiv = createWeatherDescription(hourlyWeatherData);
             weatherContainer.appendChild(hourlyWeatherDataDiv);
@@ -69,6 +71,8 @@ async function fetchWeather() {
 
     } catch (error) {
         console.log(error);
+        // Show the input field again if an error occurs
+        document.getElementById('cityInput').style.display = 'block';
     }
 }
 
