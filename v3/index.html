@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <title>Egyszerű Menü</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="sidebar">
+    <div class="menu-item games" onclick="changeBackground('games')">
+      <span>Games</span>
+    </div>
+    <div class="menu-item calculator" onclick="changeBackground('calculator')">
+      <span>Calculator</span>
+    </div>
+    <div class="menu-item todo" onclick="changeBackground('todo')">
+      <span>To-Do</span>
+    </div>
+    <div class="menu-item whiteboard" onclick="changeBackground('whiteboard')">
+      <span>Whiteboard</span>
+    </div>
+    <div class="menu-item quiz" onclick="changeBackground('quiz')">
+      <span>Quiz</span>
+    </div>
+  </div>
+  <div class="content" id="content"></div>
+
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener("contextmenu",(e)=>{
+    e.preventDefault()
+    })
+  </script>
+</body>
+</html>

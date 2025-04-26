@@ -1,0 +1,61 @@
+:root {
+  --transition-speed: 0.2s;
+}
+
+body {
+  margin: 0;
+  font-family: 'Space Mono', monospace;
+  display: flex;
+  height: 100vh;
+  background: #f5f5f5;
+}
+
+.sidebar {
+  width: 15vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-item {
+  padding: 0;
+  text-align: left;
+  color: black;
+  font-size: 2vw;
+  height: 100vh;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  user-select: none;
+  transition: background-color var(--transition-speed) ease-out, color var(--transition-speed) ease-out;
+}
+
+.menu-item span {
+  margin-left: 0.75vw;
+}
+
+.games { 
+  background-color: #7ce0d5;
+  color: #00513E;
+}
+.calculator {
+  background-color: #5ea5da; 
+  color: #003B6B;
+}
+.todo {
+  background-color: #e4bf64; 
+  color: #694D00;
+}
+.whiteboard { 
+  background-color: #e97ee5; 
+  color: #6D0077;
+}
+.quiz { 
+  background-color: #a7e86a;
+  color: #317200; 
+}
+
+.content {
+  flex: 1;
+  background-color: #e8e8e8;
+  transition: background-color var(--transition-speed) ease-out;
+}
