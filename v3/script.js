@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
     warning.style.color = '#000';
     warning.style.textAlign = 'center';
     warning.style.padding = '10px';
-    warning.style.fontSize = '300px';
+    warning.style.fontSize = '30px';
     warning.style.zIndex = '1000';
     document.body.appendChild(warning);
   }
