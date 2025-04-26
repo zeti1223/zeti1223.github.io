@@ -52,11 +52,11 @@ document.addEventListener('DOMContentLoaded', () => {
     warning.style.top = '0';
     warning.style.left = '0';
     warning.style.width = '100%';
-    warning.style.backgroundColor = '#ffcc00';
+    warning.style.backgroundColor = '#ff0000;
     warning.style.color = '#000';
     warning.style.textAlign = 'center';
     warning.style.padding = '10px';
-    warning.style.fontSize = '1.5em';
+    warning.style.fontSize = '3vw';
     warning.style.zIndex = '1000';
     document.body.appendChild(warning);
   }
