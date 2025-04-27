@@ -43,21 +43,3 @@ function changeBackground(page) {
   }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-  if (isMobile) {
-    const warning = document.createElement('div');
-    warning.textContent = 'Használj PC-t!';
-    warning.style.position = 'fixed';
-    warning.style.top = '0';
-    warning.style.left = '0';
-    warning.style.width = '100%';
-    warning.style.backgroundColor = '#ff0000;
-    warning.style.color = '#000';
-    warning.style.textAlign = 'center';
-    warning.style.padding = '10px';
-    warning.style.fontSize = '30px';
-    warning.style.zIndex = '1000';
-    document.body.appendChild(warning);
-  }
-});
