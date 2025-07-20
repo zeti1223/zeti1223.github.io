@@ -1,0 +1,47 @@
+[
+  {
+    "name": "Bluetooth fülhallgató",
+    "price": 9990,
+    "image": "https://placehold.co/300x200"
+  },
+  {
+    "name": "Okosóra",
+    "price": 14990,
+    "image": "https://placehold.co/300x200"
+  },
+  {
+    "name": "Powerbank 10000mAh",
+    "price": 6490,
+    "image": "https://placehold.co/300x200"
+  },
+  {
+    "name": "Teszt termék",
+    "price": 100000,
+    "image": "https://placehold.co/300x200"
+  },
+  {
+    "name": "Teszt termék",
+    "price": 100000000,
+    "image": "https://placehold.co/300x200"
+  },
+  {
+    "name": "Telefon tok",
+    "price": 1990,
+    "image": "https://placehold.co/300x200"
+  },
+  {
+    "name": "Laptop táska",
+    "price": 4990,
+    "image": "https://placehold.co/300x200"
+  },
+  {
+    "name": "USB-C kábel",
+    "price": 990,
+    "image": "https://placehold.co/300x200"
+  },
+  {
+    "name": "HDMI kábel",
+    "price": 1490,
+    "image": "https://placehold.co/300x200"
+  }
+]

@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <title>Shop</title>
+  <style>
+    body {
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    }
+    header {
+    background: #1e3a8a;
+    color: white;
+    text-align: center;
+    padding: 0.5rem;
+    }
+    .product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 2rem;
+    }
+    .product {
+    background: white;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 8px;
+    width: 300px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .product img {
+    width: 100%;
+    border-radius: 8px;
+    }
+    button {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    }
+    .cart-link {
+    display: block;
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    }
+    form {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    }
+    form input, form button {
+    margin: 0.5rem 0;
+    padding: 0.8rem;
+    font-size: 1rem;
+    }
+    #cart-icon {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #2563eb;
+      color: white;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      font-size: 18px;
+      cursor: pointer;
+      z-index: 1000;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
+    #cart-popup {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.3s, transform 0.3s;
+  display: none;
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  width: 320px;
+  max-height: 400px;
+  overflow-y: auto;
+  background: white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  padding: 1rem;
+  border-radius: 8px;
+  z-index: 1001;
+  scrollbar-width: thin;
+  scrollbar-color: #2563eb #e0e7ff;
+}
+
+/* Webkit (Chrome, Edge, Safari) */
+#cart-popup::-webkit-scrollbar {
+  width: 8px;
+  background: #e0e7ff;
+  border-radius: 8px;
+}
+#cart-popup::-webkit-scrollbar-thumb {
+  background: #2563eb;
+  border-radius: 8px;
+  border: 2px solid #e0e7ff;
+}
+#cart-popup::-webkit-scrollbar-thumb:hover {
+  background: #1d4ed8;
+}
+    #cart-popup.open {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+    #cart-popup p {
+      margin: 0.5rem 0;
+    }
+    #close-cart {
+      background: transparent;
+      border: none;
+      font-size: 1.2rem;
+      float: right;
+      cursor: pointer;
+    }
+    #cart-icon.animate {
+      animation: shake 0.4s;
+    }
+    @keyframes shake {
+      0% { transform: translateX(0); }
+      20% { transform: translateX(-5px); }
+      40% { transform: translateX(5px); }
+      60% { transform: translateX(-5px); }
+      80% { transform: translateX(5px); }
+      100% { transform: translateX(0); }
+    }
+    .product-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+    .product {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 10px;
+      text-align: center;
+      width: 300px;
+    }
+    .product img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+    .product h2 {
+      font-size: 1.2em;
+      margin: 0.5em 0;
+    }
+    .product p {
+      font-size: 1.1em;
+      color: #333;
+    }
+    .product button {
+      background: #2563eb;
+      color: white;
+      border: none;
+      padding: 0.5em 1em;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1em;      
+      transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
+    }
+    .product button:hover {
+      background: #1d4ed8;
+    }
+    #order-form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }    
+    #order-form select {
+      padding: 0.5em;
+      border-radius: 4px;
+      border: 1px solid #2563eb;
+      background: #f3f4f6;
+      color: #2563eb;
+      font-size: 1em;
+      margin-bottom: 10px;
+      transition: border-color 0.2s;
+    }
+
+    #order-form select:focus {
+      border-color: #1d4ed8;
+      outline: none;
+      background: #e0e7ff;
+    }
+    .product button.added {
+      background: #16a6fa !important; /* Sárga */
+      color: #333 !important;
+    }
+
+    /* Egyedi scrollbar az egész oldalra */
+body, html {
+  scrollbar-width: thin;
+  scrollbar-color: #2563eb #e0e7ff;
+}
+
+/* Webkit böngészők (Chrome, Edge, Safari) */
+body::-webkit-scrollbar, html::-webkit-scrollbar {
+  width: 10px;
+  background: #e0e7ff;
+  border-radius: 8px;
+}
+body::-webkit-scrollbar-thumb, html::-webkit-scrollbar-thumb {
+  background: #2563eb;
+  border-radius: 8px;
+  border: 2px solid #e0e7ff;
+}
+body::-webkit-scrollbar-thumb:hover, html::-webkit-scrollbar-thumb:hover {
+  background: #1d4ed8;
+}
+  </style>
+</head>
+<body>
+  <header><h1>Webshop</h1></header>
+  <main class="product-list" id="product-list"></main>
+
+  <div id="cart-icon">🛒</div>
+
+  <div id="cart-popup">
+    <button id="close-cart">&times;</button>
+    <div style="display:flex; align-items:center; justify-content:space-between;">
+      <h2 style="margin:0;">Kosár tartalma</h2>
+      <button id="empty-cart" title="Kosár ürítése" style="margin-left:1em; font-size:1.3em; background:none; border:none; cursor:pointer;">🗑️</button>
+    </div>
+    <div id="cart-items"></div>
+    <h3 id="total-price"></h3>
+    <form id="order-form">
+      <h2>Megrendelés</h2>
+      <input type="text" name="Name" placeholder="Név" required />
+      <input type="email" name="Email" placeholder="Email" required />
+      <input type="tel" name="Phone" placeholder="Telefonszám" required />
+      <input type="text" name="Adress" placeholder="Szállítási cím (Város, utca házszám.)" required />
+      <select name="Payment method" id="paymentMethod" required>
+        <option value="">Fizetési mód kiválasztása</option>
+        <option value="Készpénz">Készpénz</option>
+        <option value="Bankkártya">Bankkártya</option>
+      </select>
+      <input type="hidden" name="Termékek" id="productsField" />
+      <button type="submit">Megrendelem</button>
+    </form>
+    <p id="order-message" style="color:green; font-weight:bold;"></p>
+  </div>
+
+  <script>
+    // Termékek betöltése JSON-ból
+    async function loadProducts() {
+      const res = await fetch('products.json');
+      const products = await res.json();
+      const productList = document.getElementById('product-list');
+      productList.innerHTML = '';
+      products.forEach(product => {
+        const div = document.createElement('div');
+        div.className = 'product';
+        div.innerHTML = `
+          <img src="${product.image}" alt="${product.name}">
+          <h2>${product.name}</h2>
+          <p>${product.price.toLocaleString('hu-HU')} Ft</p>
+          <button onclick="addToCart('${product.name}', ${product.price})">Kosárba</button>
+        `;
+        productList.appendChild(div);
+      });
+    }
+
+    // Termék hozzáadása a kosárhoz (összegezve a darabszámokat)
+    function addToCart(name, price) {
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const existing = cart.find(item => item.name === name && item.price === price);
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        cart.push({ name, price, qty: 1 });
+      }
+      localStorage.setItem("cart", JSON.stringify(cart));
+      renderCart();
+      animateCartIcon();
+
+      // Gomb sárgára váltása 0.5s-ig
+      const buttons = document.querySelectorAll('.product button');
+      buttons.forEach(btn => {
+        if (btn.textContent === "Kosárba" && btn.onclick?.toString().includes(name)) {
+          btn.classList.add('added');
+          setTimeout(() => btn.classList.remove('added'), 500);
+        }
+      });
+    }
+
+    function animateCartIcon() {
+      cartIcon.classList.add("animate");
+      setTimeout(() => {
+        cartIcon.classList.remove("animate");
+      }, 400);
+    }
+
+    function formatNumber(num) {
+      return num.toLocaleString('hu-HU');
+    }
+
+    // Kosár ikon és popup megjelenítése
+    const cartIcon = document.getElementById("cart-icon");
+    const cartPopup = document.getElementById("cart-popup");
+    const closeCartBtn = document.getElementById("close-cart");
+    const cartItemsDiv = document.getElementById("cart-items");
+    const totalPrice = document.getElementById("total-price");
+    const productsField = document.getElementById("productsField");
+    const orderMessage = document.getElementById("order-message");
+    const orderForm = document.getElementById("order-form");
+
+    cartIcon.addEventListener("click", () => {
+      if (cartPopup.classList.contains("open")) {
+        cartPopup.classList.remove("open");
+        setTimeout(() => { cartPopup.style.display = "none"; }, 300);
+        orderMessage.textContent = "";
+      } else {
+        cartPopup.style.display = "block";
+        setTimeout(() => { cartPopup.classList.add("open"); }, 10);
+        renderCart();
+      }
+    });
+
+    closeCartBtn.addEventListener("click", () => {
+      cartPopup.classList.remove("open");
+      setTimeout(() => { cartPopup.style.display = "none"; }, 300);
+      orderMessage.textContent = "";
+    });
+
+    function renderCart() {
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      cartItemsDiv.innerHTML = "";
+      if (cart.length === 0) {
+        cartItemsDiv.innerHTML = "<p>A kosár üres.</p>";
+        totalPrice.textContent = "";
+        productsField.value = "";
+        return;
+      }
+      let total = 0;
+      let summary = "";
+      cart.forEach(item => {
+        const p = document.createElement("p");
+        p.textContent = `${item.name} ${item.qty > 1 ? item.qty + "x" : ""} – ${formatNumber(item.price * item.qty)} Ft`;
+        cartItemsDiv.appendChild(p);
+        total += item.price * item.qty;
+        summary += `${item.name} (${item.price} Ft) x${item.qty}, `;
+      });
+      totalPrice.textContent = `Összesen: ${formatNumber(total)} Ft`;
+      productsField.value = summary + ` Összesen: ${formatNumber(total)} Ft`;
+    }
+
+    // Rendelés elküldése Formspree-re
+    orderForm.addEventListener("submit", function(e) {
+  const nameInput = orderForm.querySelector('input[name="Name"]');
+  if (nameInput && nameInput.value.trim().toLowerCase() === "admin") {
+    window.location.href = "admin.html";
+    e.preventDefault();
+    return;
+  }
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  if (cart.length === 0) {
+    orderMessage.textContent = "A kosár üres, nem lehet megrendelést küldeni!";
+    e.preventDefault();
+    return;
+  }
+  e.preventDefault();
+  orderMessage.textContent = "Küldés folyamatban…";
+
+  const formData = new FormData(orderForm);
+
+  fetch("https://formspree.io/f/xanbqbwy", {
+    method: "POST",
+    headers: { 'Accept': 'application/json' },
+    body: formData
+  })
+  .then(response => {
+    if (response.ok) {
+      orderMessage.textContent = "Köszönjük a megrendelést!";
+      localStorage.removeItem("cart");
+      cartItemsDiv.innerHTML = "<p>A kosár üres.</p>";
+      totalPrice.textContent = "";
+      productsField.value = "";
+      orderForm.reset();
+    } else {
+      orderMessage.textContent = "Hiba történt, próbáld újra.";
+    }
+  })
+  .catch(() => {
+    orderMessage.textContent = "Hiba történt, próbáld újra.";
+  });
+    });
+
+    const emptyCartBtn = document.getElementById("empty-cart");
+
+    emptyCartBtn.addEventListener("click", () => {
+      localStorage.removeItem("cart");
+      renderCart();
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+      loadProducts();
+      renderCart();
+    });
+  </script>
+</body>
+</html>
