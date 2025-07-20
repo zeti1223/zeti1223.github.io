@@ -15,13 +15,43 @@
     "image": "https://placehold.co/300x200"
   },
   {
-    "name": "Teszt termék",
-    "price": 100000,
+    "name": "Vezeték nélküli töltő",
+    "price": 2990,
     "image": "https://placehold.co/300x200"
   },
   {
-    "name": "Teszt termék",
-    "price": 100000000,
+    "name": "Bluetooth hangszóró",
+    "price": 7990,
+    "image": "https://placehold.co/300x200"
+  },
+  {
+    "name": "Webkamera",
+    "price": 4990,
+    "image": "https://placehold.co/300x200"
+  },
+  {
+    "name": "Mikrofon",
+    "price": 3990,
+    "image": "https://placehold.co/300x200"
+  },
+  {
+    "name": "Egér",
+    "price": 1990,
+    "image": "https://placehold.co/300x200"
+  },
+  {
+    "name": "Billentyűzet",
+    "price": 2990,
+    "image": "https://placehold.co/300x200"
+  },
+  {
+    "name": "Monitor állvány",
+    "price": 2490,
+    "image": "https://placehold.co/300x200"
+  },
+  {
+    "name": "Laptop hűtőpad",
+    "price": 3490,
     "image": "https://placehold.co/300x200"
   },
   {
@@ -40,8 +70,68 @@
     "image": "https://placehold.co/300x200"
   },
   {
+    "name": "Lightning kábel",
+    "price": 990,
+    "image": "https://placehold.co/300x200"
+  },
+  {
+    "name": "Micro USB kábel",
+    "price": 990,
+    "image": "https://placehold.co/300x200"
+  },
+  {
+    "name": "3.5mm jack kábel",
+    "price": 790,
+    "image": "https://placehold.co/300x200"
+  },
+  {
+    "name": "HDMI adapter",
+    "price": 1490,
+    "image": "https://placehold.co/300x200"
+  },
+  {
+    "name": "VGA kábel",
+    "price": 1290,
+    "image": "https://placehold.co/300x200"
+  },
+  {
     "name": "HDMI kábel",
     "price": 1490,
+    "image": "https://placehold.co/300x200"
+  },
+  {
+    "name": "DisplayPort kábel",
+    "price": 1990,
+    "image": "https://placehold.co/300x200"
+  },
+  {
+    "name": "Ethernet kábel",
+    "price": 990,
+    "image": "https://placehold.co/300x200"
+  },
+  {
+    "name": "SD kártya",
+    "price": 1990,
+    "image": "https://placehold.co/300x200"
+  },
+  {
+    "name": "USB pendrive",
+    "price": 1490,
+    "image": "https://placehold.co/300x200"
+  },
+  {
+    "name": "Hordozható merevlemez",
+    "price": 7990,
+    "image": "https://placehold.co/300x200"
+  },
+  {
+    "name": "Bluetooth adapter",
+    "price": 1990,
+    "image": "https://placehold.co/300x200"
+  },
+  {
+    "name": "Wi-Fi erősítő",
+    "price": 2990,
     "image": "https://placehold.co/300x200"
   }
 ]
