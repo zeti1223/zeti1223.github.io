@@ -97,7 +97,7 @@
   {
     "name": "HDMI kábel",
     "price": 1490,
-    "image": "https://placehold.co/300x200"
+    "image": "https://homemovie.hu/wp-content/uploads/2021/11/Inakustik-Star-2.1-8K-HDMI-kabel-ultra-hd.jpg"
   },
   {
     "name": "DisplayPort kábel",
@@ -112,7 +112,7 @@
   {
     "name": "SD kártya",
     "price": 1990,
-    "image": "https://placehold.co/300x200"
+    "image": "https://res.cloudinary.com/rsc/image/upload/b_rgb:FFFFFF,c_pad,dpr_2.625,f_auto,h_214,q_auto,w_380/c_pad,h_214,w_380/Y1747340-01?pgw=1"
   },
   {
     "name": "USB pendrive",

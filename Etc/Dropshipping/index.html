@@ -194,6 +194,7 @@
       outline: none;
       background: #e0e7ff;
     }
+    
     .product button.added {
       background: #16a6fa !important; /* Sárga */
       color: #333 !important;
@@ -242,6 +243,21 @@ body::-webkit-scrollbar-thumb:hover, html::-webkit-scrollbar-thumb:hover {
   border: none;
   cursor: pointer;
 }
+.product-image-container {
+  width: 300px;
+  height: 200px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-image-container img {
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+}
+
   </style>
 </head>
 <body>
@@ -293,11 +309,14 @@ function renderProducts(products) {
     const div = document.createElement('div');
     div.className = 'product';
     div.innerHTML = `
-      <img src="${product.image}" alt="${product.name}">
+      <div class="product-image-container">
+        <img src="${product.image}" alt="${product.name}">
+      </div>
       <h2>${product.name}</h2>
       <p>${product.price.toLocaleString('hu-HU')} Ft</p>
       <button onclick="addToCart('${product.name}', ${product.price})">Kosárba</button>
     `;
+
     productList.appendChild(div);
   });
 }
