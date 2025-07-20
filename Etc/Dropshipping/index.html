@@ -413,5 +413,14 @@ body::-webkit-scrollbar-thumb:hover, html::-webkit-scrollbar-thumb:hover {
       renderCart();
     });
   </script>
+  <script>
+  // Mobil eszköz ellenőrzése
+  if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    document.body.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100vh;font-size:2.5vh;color:#2563eb;"><p>Használd gépen ezt az oldalt</p></div>';
+    document.body.style.background = "#fff";
+    document.body.style.margin = "0";
+    document.body.style.padding = "0";
+  }
+</script>
 </body>
 </html>
