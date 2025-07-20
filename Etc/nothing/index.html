@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <title>Nothing</title>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      background: #000;
+      width: 100%;
+      user-select: none; /* Ne lehessen kijelölni */
+    }
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      cursor: none;
+    }
+    .center-text {
+      color: #fff;
+      font-size: 1.5rem;
+      letter-spacing: 2px;
+      opacity: 0.8;
+      user-select: none; /* Biztosan ne lehessen kijelölni */
+    }
+  </style>
+  <script>
+    // Jobbkatt tiltása
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+    });
+  </script>
+</head>
+<body>
+  <div class="center-text">nothing</div>
+</body>
+</html>
