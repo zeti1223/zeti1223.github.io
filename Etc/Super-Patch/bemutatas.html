@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <title>Bemutatás</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-color: #B58392;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+    }
+
+    .product {
+      display: flex;
+      align-items: flex-start;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .product img {
+      width: auto;
+      height: 300px;
+      flex-shrink: 0;
+    }
+
+    .text-block {
+      max-width: 600px;
+    }
+
+    .text-block h2 {
+      margin: 0 0 1rem 0;
+      line-height: 1.4;
+    }
+
+    .text-block p {
+      line-height: 1.6;
+      text-align: justify;
+    }
+
+    @media screen and (max-width: 600px) {
+      .product {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .text-block {
+        max-width: 100%;
+      }
+    }
+/* Görgetősáv – WebKit böngészők (Chrome, Safari, Edge stb.) */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #EFC8D3; /* világos háttér */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #7C3F4B; /* sötét rózsaszínes-barna */
+  border-radius: 6px;
+  border: 2px solid #EFC8D3;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #5e2c35;
+}
+
+/* Görgetősáv – Firefox */
+* {
+  scrollbar-width: thin;              /* vékonyabb sáv */
+  scrollbar-color: #7C3F4B #EFC8D3;   /* thumb, track */
+}
+
+
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html" class="menu-button">Főoldal</a>
+    <a href="bemutatas.html" class="menu-button active">Bemutatás</a>
+    <a href="hasznalat.html" class="menu-button">Használat</a>
+    <a href="vasarlas.html" class="menu-button">Vásárlás</a>
+  </nav>
+
+  <div class="container">
+    <div class="product">
+      <img src="rocket-1800-768x768-removebg-preview.png" alt="Rocket Patch">
+      <div class="text-block">
+        <h2>Teljesítmény<br>Potencia<br>Gyulladáscsökkentés</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer  accumsan purus nec elit elementum posuere nec at sem. Mauris eget velit  orci. Pellentesque habitant morbi tristique senectus et netus et  malesuada fames ac turpis egestas. Nunc bibendum hendrerit lobortis.  Phasellus interdum sapien massa, id blandit magna porta id. Aliquam erat volutpat. Sed ac libero sem. Integer eu nulla quis libero faucibus  condimentum. Pellentesque vehicula a lorem ac feugiat. Duis ultricies  maximus feugiat.
+        </p>
+      </div>
+    </div>
+
+    <div class="product">
+      <img src="rocket-1800-768x768-removebg-preview.png" alt="Rocket Patch">
+      <div class="text-block">
+        <h2>Alma<br>Körte<br>Paradicsom</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer  accumsan purus nec elit elementum posuere nec at sem. Mauris eget velit  orci. Pellentesque habitant morbi tristique senectus et netus et  malesuada fames ac turpis egestas. Nunc bibendum hendrerit lobortis.  Phasellus interdum sapien massa, id blandit magna porta id. Aliquam erat volutpat. Sed ac libero sem. Integer eu nulla quis libero faucibus  condimentum. Pellentesque vehicula a lorem ac feugiat. Duis ultricies  maximus feugiat.
+        </p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

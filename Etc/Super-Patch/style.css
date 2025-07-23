@@ -1,0 +1,50 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.2); /* Fehér háttér a menüsáv mögött */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.menu-button {
+  padding: 0.8rem 1.5rem;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+  border: 0.15vw solid black;
+  transition: all 0.2s ease;
+}
+
+/* Eredeti gombszínek */
+.menu-button:nth-child(1) {
+  background-color: #958DA5; /* Főoldal */
+}
+.menu-button:nth-child(2) {
+  background-color: #B58392; /* Bemutatás */
+}
+.menu-button:nth-child(3) {
+  background-color: #CC7B74; /* Használat */
+}
+.menu-button:nth-child(4) {
+  background-color: #E46962; /* Vásárlás */
+}
+
+.menu-button:hover {
+  transform: scale(1.05);
+}
+
+.menu-button.active {
+  box-shadow: 0 0 10px black;
+}
+.menu-button:active {
+  transform: scale(0.95);
+}
