@@ -4,7 +4,13 @@
   <meta charset="UTF-8">
   <title>Főoldal</title>
   <link rel="stylesheet" href="style.css">
-  <style>body { background-color: #958DA5; }</style>
+  <style>
+  body {
+  background-color: #958DA5; 
+  user-select: none;
+  cursor: default; /* Disable custom cursor */
+}
+  </style>
 </head>
 <body>
   <nav>
@@ -17,4 +23,9 @@
     <h1>Ez a főoldal</h1>
   </main>
 </body>
+<script>
+    document.addEventListener("contextmenu", (e) => {
+      e.preventDefault();
+  });
+</script>
 </html>
